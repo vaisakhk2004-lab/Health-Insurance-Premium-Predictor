@@ -1,13 +1,17 @@
 import pandas as pd
 from joblib import load
+from pathlib import Path
 import os
 
 print(os.getcwd())
 print(os.path.exists("models/high_age_model.joblib"))
-high_age_model=load("C:/Users/vaisa/Health-Insurance-Premium-Predictor/App/models/high_age_model.joblib")
-low_age_model=load("C:/Users/vaisa/Health-Insurance-Premium-Predictor/App/models/low age model.joblib")
-high_scale=load("C:/Users/vaisa/Health-Insurance-Premium-Predictor/App/models/scaler_high_age.joblib")
-low_scale=load("C:/Users/vaisa/Health-Insurance-Premium-Predictor/App/models/scaler_young.joblib")
+BASE_DIR = Path(__file__).resolve().parent.parent
+MODEL_DIR = BASE_DIR / "models"
+
+high_age_model = load(MODEL_DIR / "high_age_model.joblib")
+low_age_model = load(MODEL_DIR / "low age model.joblib")
+high_scale = load(MODEL_DIR / "scaler_high_age.joblib")
+low_scale = load(MODEL_DIR / "scaler_young.joblib")
 
 def preprocess_input(input_dict):
     columns=['age', 'number_of_dependants', 'income_level', 'income_lakhs','insurance_plan',
