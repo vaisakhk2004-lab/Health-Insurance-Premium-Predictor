@@ -1,5 +1,5 @@
 import pandas as pd
-import joblib
+from joblib import load
 high_age_model=load("models//high_age_model.joblib")
 low_age_model=load("models//low age model.joblib")
 high_scale=load("models//scaler_high_age.joblib")
