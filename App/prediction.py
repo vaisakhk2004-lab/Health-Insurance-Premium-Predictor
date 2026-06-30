@@ -1,9 +1,14 @@
 import pandas as pd
 from joblib import load
-high_age_model=load("models/high_age_model.joblib")
-low_age_model=load("models/low age model.joblib")
-high_scale=load("models/scaler_high_age.joblib")
-low_scale=load("models/scaler_young.joblib")
+import os
+
+print(os.getcwd())
+print(os.path.exists("models/high_age_model.joblib"))
+high_age_model=load("C:/Users/vaisa/Health-Insurance-Premium-Predictor/App/models/high_age_model.joblib")
+low_age_model=load("C:/Users/vaisa/Health-Insurance-Premium-Predictor/App/models/low age model.joblib")
+high_scale=load("C:/Users/vaisa/Health-Insurance-Premium-Predictor/App/models/scaler_high_age.joblib")
+low_scale=load("C:/Users/vaisa/Health-Insurance-Premium-Predictor/App/models/scaler_young.joblib")
+
 def preprocess_input(input_dict):
     columns=['age', 'number_of_dependants', 'income_level', 'income_lakhs','insurance_plan',
        'genetical_risk','normalised_score', 'gender_Male', 'region_Northwest',
