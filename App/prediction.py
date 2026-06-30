@@ -3,9 +3,7 @@ from joblib import load
 from pathlib import Path
 import os
 
-print(os.getcwd())
-print(os.path.exists("models/high_age_model.joblib"))
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 MODEL_DIR = BASE_DIR / "models"
 
 high_age_model = load(MODEL_DIR / "high_age_model.joblib")
